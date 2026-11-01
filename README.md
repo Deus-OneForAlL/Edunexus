@@ -1,276 +1,250 @@
+# 🎓 EduNexus
+### Smart Student & Classroom Management System
 
-::: {align="center"} # EduNexus ### A Smarter, More Connected Classroom Experience **An offline-first Android classroom management system designed to simplify academic workflows for students, teachers, and administrators.** ![Android](https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) ![Kotlin](https://img.shields.io/badge/Language-Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white) ![Jetpack Compose](https://img.shields.io/badge/UI-Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white) ![Offline First](https://img.shields.io/badge/Approach-Offline--First-0A7B83?style=for-the-badge) :::
-Overview
-EduNexus is a native Android application concept that brings
-essential classroom activities into one organized platform. It is
-designed to reduce fragmented academic workflows by providing role-based
-experiences for students, teachers, and administrators.
+<p align="center">
+  <strong>A smarter way to manage classrooms, simplify academic workflows, and connect students, teachers, and administrators.</strong>
+</p>
 
-The project follows an offline-first approach, with local data
-storage at its core. Its intended feature set brings together
-attendance, classroom information, assignments, quizzes, academic
-records, notices, and reporting in a single mobile application.
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android"/>
+  <img src="https://img.shields.io/badge/Language-Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"/>
+  <img src="https://img.shields.io/badge/UI-Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white" alt="Jetpack Compose"/>
+  <img src="https://img.shields.io/badge/Architecture-Offline--First-00A896?style=for-the-badge" alt="Offline First"/>
+</p>
 
-Implementation note: This README describes the intended project
-scope and architecture. Update feature statuses and technology
-references to match the code that is actually present and verified in
-this repository.
+---
 
-Key Features
-Module Intended capabilities
+## 📌 Overview
 
-Role-based access Separate student, teacher, and
-administrator experiences
+**EduNexus** is a modern Android-based classroom management application designed to streamline academic administration and improve the everyday classroom experience.
 
-Student identification QR-based student identification,
-followed by face verification where
-configured
+The platform brings students, teachers, and administrators together through a unified application, providing a structured environment for attendance management, academic activities, classroom coordination, and student performance tracking.
 
-Attendance management Manual, QR-based, and face-assisted
-attendance workflows
+Built with **Kotlin and Jetpack Compose**, EduNexus follows an offline-first approach, prioritizing local data management, accessibility, performance, and a clean user experience.
 
-Digital student ID Student details and a scannable
-identification QR
+The goal is simple: make classroom management smarter, faster, and more efficient.
 
-Classes & timetable Class information, enrolled
-subjects, and schedules
+## ✨ Key Features
 
-Assignments & tasks Assignment distribution, submission
-tracking, and task organization
+EduNexus is designed around three primary user roles.
 
-Quizzes & assessments Objective and short-answer
-assessments with scoring
+### 🎓 Student Module
+- QR-based student identification.
+- Face verification for student authentication.
+- Personalized student dashboard.
+- Attendance tracking and history.
+- Class schedules and timetable.
+- Assignments and academic tasks.
+- Notes and learning materials.
+- Quizzes and assessment results.
+- Academic performance tracking.
+- EduBot educational assistance.
+- Digital student identity card.
 
-Academic records Marks, attendance summaries, and
-performance insights
+### 👨‍🏫 Teacher Module
+- Dedicated teacher dashboard.
+- Classroom and subject management.
+- Attendance management through manual, QR, and face-based workflows.
+- Assignment creation and management.
+- Quiz creation and evaluation.
+- Student performance monitoring.
+- Class analytics and attendance insights.
+- Notices and classroom announcements.
+- Study material management.
 
-Notices & study material Centralized announcements and
-learning resources
+### 🛡️ Administrator Module
+- Centralized administration dashboard.
+- Student and teacher management.
+- Department, semester, and subject management.
+- Class and enrollment management.
+- Timetable management.
+- Notice and announcement management.
+- Attendance and academic reports.
+- CSV/PDF report generation.
+- System-level data management.
 
-Reports & analytics Classroom summaries and exportable
-academic reports
+> **Development note:** The feature list describes the project's intended scope. Individual features may be under development and should be considered complete only after implementation and testing.
 
-EduBot Educational assistance using local
-knowledge, with optional online
-lookup
-Technology Stack
-Area Technology
+## 🚀 What Makes EduNexus Different?
 
-Language Kotlin
+| Capability | Approach |
+|---|---|
+| Architecture | Offline-first Android application |
+| Data Management | Local database using Room |
+| Authentication | Role-based access |
+| Student Identification | QR-based identification with face verification |
+| Attendance | Manual, QR, and face-based workflows |
+| User Interface | Modern native Jetpack Compose UI |
+| Academic Management | Integrated classroom and student workflows |
+| Educational Assistance | EduBot with local educational knowledge |
 
-Platform Native Android
+## 🛠️ Technology Stack
 
-UI Jetpack Compose
+The project uses modern Android development technologies.
 
-Design system Material 3
+| Technology | Purpose |
+|---|---|
+| Kotlin | Primary programming language |
+| Jetpack Compose | Native declarative UI |
+| Material 3 | UI components and design system |
+| Room Database | Local persistence |
+| Kotlin Coroutines | Asynchronous operations |
+| StateFlow / Flow | Reactive state management |
+| ViewModel | UI state and lifecycle-aware logic |
+| Navigation Compose | Application navigation |
+| Hilt | Dependency injection |
+| CameraX | Camera integration |
+| ML Kit | On-device face and barcode detection |
+| ONNX Runtime Mobile | Planned on-device face embedding inference |
+| Storage Access Framework | Local document selection |
 
-Local database Room / SQLite
+## 🏗️ Architecture
 
-Application architecture ViewModel, Repository pattern,
-Coroutines and Flow
+EduNexus follows a layered architecture to keep the application modular, maintainable, and scalable.
 
-Navigation Navigation Compose
+```mermaid
+flowchart TD
+    A["Presentation Layer<br/>Jetpack Compose UI"] --> B["ViewModel Layer<br/>StateFlow & UI State"]
+    B --> C["Domain Layer<br/>Business Logic & Use Cases"]
+    C --> D["Data Layer<br/>Repositories"]
+    D --> E["Room Database<br/>Local Persistence"]
+    D --> F["Device Services<br/>Camera, QR & Face Verification"]
+    D --> G["Storage Services<br/>Documents & Reports"]
+```
 
-Dependency injection Hilt
+### Architectural Principles
 
-Camera features CameraX
+- **Separation of Concerns:** UI, business logic, and data management remain independent.
+- **Offline-First Design:** Core application workflows are designed to work without mandatory internet access.
+- **Modularity:** Features are organized to support maintainability and future expansion.
+- **Reactive UI:** StateFlow and Kotlin Flow support responsive UI updates.
+- **Local Data Ownership:** Academic data is intended to remain locally managed by the application.
 
-QR / face detection ML Kit, where integrated
+## 🎨 User Experience
 
-On-device face matching Local embedding model, where
-configured
+EduNexus aims to provide a polished, modern, and intuitive mobile experience.
 
-File handling Android Storage Access Framework
-Keep only technologies and integrations that are actually included in
-the current project dependencies and source code.
+Design priorities include:
 
-Architecture
-EduNexus is intended to follow a layered architecture that separates
-presentation, application logic, persistence, and device integrations.
+- Dark-first visual design.
+- Consistent typography and spacing.
+- Clear information hierarchy.
+- Smooth navigation and transitions.
+- Subtle animations and micro-interactions.
+- Responsive layouts for different screen sizes.
+- Accessible loading, empty, success, and error states.
 
-┌─────────────────────────────────────────────┐
-│                 Compose UI                  │
-│       Screens · Components · Navigation    │
-└──────────────────────┬──────────────────────┘
-                       │ UI state / events
-┌──────────────────────▼──────────────────────┐
-│               ViewModel Layer               │
-│       StateFlow · UI logic · validation     │
-└──────────────────────┬──────────────────────┘
-                       │
-┌──────────────────────▼──────────────────────┐
-│          Repository / Domain Layer          │
-│             Use cases · rules               │
-└──────────────────────┬──────────────────────┘
-                       │
-┌──────────────────────▼──────────────────────┐
-│              Data & Device Layer            │
-│        Room / SQLite · Camera · Files       │
-└─────────────────────────────────────────────┘
-Role-based Experience
-Student
-View a personalized academic dashboard.
-Access classes, timetable, assignments, and study material.
-Review attendance and academic performance.
-Attempt available quizzes and view results.
-Access notices and EduBot.
-Teacher
-View assigned classes and subjects.
-Manage attendance sessions.
-Create assignments, quizzes, and notices.
-Review student submissions and assessment results.
-Monitor class-level attendance and performance.
-Administrator
-Manage student, teacher, class, and subject records.
-Maintain academic and timetable information.
-Publish notices and manage institutional data.
-Review reports and administrative analytics.
-Available actions depend on the modules implemented in the current
-build.
+## 📱 Platform Requirements
 
-Offline-first Design
-EduNexus is designed to keep essential classroom workflows available
-without requiring a permanent internet connection.
+| Requirement | Specification |
+|---|---|
+| Platform | Android |
+| Minimum Android Version | Android 10 |
+| Minimum SDK | API 29 |
+| Development Environment | Android Studio |
+| Language | Kotlin |
+| UI Framework | Jetpack Compose |
+| Database | Room / SQLite |
 
-Local persistence through Room and SQLite.
-Core records stored on the device.
-Optional online functionality separated from essential local
-workflows.
-Local file access through Android's Storage Access Framework.
-Online lookups and any future synchronization features may require
-connectivity. Cross-device synchronization should not be assumed unless
-it has been implemented.
+## ⚙️ Getting Started
 
-Getting Started
-Requirements
-Android Studio (a current stable version is recommended).
-JDK compatible with the project's Gradle configuration.
-Android SDK required by the configured compile SDK.
-Android device or emulator.
-The project is intended to support Android 10 (API 29) and above.
-Verify the actual minSdk, compileSdk, and targetSdk values in the
-project before publishing compatibility claims.
+### Prerequisites
 
-Run locally
-Clone the repository:
+Before running EduNexus, make sure you have:
 
-git clone https://github.com/<your-username>/<your-repository>.git
-Open the cloned project in Android Studio.
+- [Android Studio](https://developer.android.com/studio) installed.
+- Android SDK configured.
+- Kotlin support enabled.
+- An Android device or emulator running Android 10 or later.
 
-Allow Gradle sync to complete.
+### Installation
 
-Connect an Android device with USB debugging enabled, or start an
-emulator.
+**1. Clone the repository**
 
-Select the app run configuration.
+```bash
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+```
 
-Click Run.
+**2. Open the project**
 
-If Gradle sync or the build fails, check the project's Gradle/JDK
-requirements and the error reported by Android Studio. Avoid changing
-dependency versions blindly.
+Open Android Studio and select:
 
-Project Structure
-The exact package structure may evolve. A typical organization for this
-project is:
+`File → Open → Select the EduNexus project folder`
 
-EduNexus/
-├── app/
-│   └── src/
-│       └── main/
-│           ├── java/
-│           │   └── .../
-│           │       ├── data/
-│           │       ├── domain/
-│           │       ├── ui/
-│           │       ├── navigation/
-│           │       ├── di/
-│           │       └── ...
-│           ├── res/
-│           └── AndroidManifest.xml
-├── gradle/
-├── build.gradle.kts
-├── settings.gradle.kts
-└── README.md
-Refer to the actual source tree for the current implementation.
+**3. Sync Gradle**
 
-Privacy & Security
-EduNexus is intended to keep institutional and student data local by
-default. Authentication, role permissions, QR validation, and biometric
-verification must be implemented and tested before production use.
+Allow Android Studio to download the required dependencies and complete Gradle synchronization.
 
-For face-based verification: - Face detection and face recognition are
-different capabilities. - Detection locates a face; recognition requires
-a validated embedding model and comparison process. - Biometric data
-requires appropriate consent, access controls, retention limits, and
-secure storage. - A missing model or failed verification should produce
-a clear failure state, not silently bypass verification.
+**4. Run the application**
 
-Treat this project as an academic prototype unless it has undergone the
-security, privacy, and reliability reviews required for institutional
-deployment.
+Connect an Android device with USB debugging enabled or start an emulator.
 
-Development Status
-Keep this table synchronized with the actual repository. Use
-Implemented only for features that are present and verified in the
-current build.
+Click **Run ▶** in Android Studio.
 
-Area Status
+> Replace the repository URL above with your actual GitHub repository URL.
 
-Core app setup and navigation Update before publishing
-Student / teacher / admin workflows Update before publishing
-Room database and demo data Update before publishing
-QR attendance Update before publishing
-Face verification Update before publishing
-Assignments and quizzes Update before publishing
-Reports and analytics Update before publishing
-EduBot Update before publishing
+## 🔐 Privacy & Data Management
 
-Suggested status labels: Implemented, In progress, Planned, and
-Needs validation.
+EduNexus is designed with local-first data management in mind.
 
-Screenshots & Demo
-Add genuine screenshots from the current application build. Suggested
-screens:
+- Core academic workflows are intended to function without a mandatory cloud backend.
+- Room provides local structured data persistence.
+- Camera-based features are designed for on-device processing.
+- Sensitive authentication and student information require appropriate protection.
+- Optional online educational resources may require an internet connection.
 
-Role selection and sign-in
-Student dashboard
-Teacher dashboard
-Attendance workflow
-Classes and timetable
-Assignments or quizzes
-Analytics and reports
-Add screenshots to a folder such as docs/screenshots/, then embed
-them:
+## 🗺️ Project Roadmap
 
-![Student dashboard](docs/screenshots/student-dashboard.png)
-Demo video: Add a verified YouTube or Google Drive demonstration URL
-here.
+The following areas represent the project's development goals.
 
-Roadmap
-Potential future improvements include:
+- [ ] Complete student, teacher, and administrator workflows.
+- [ ] Complete QR-based student identification.
+- [ ] Integrate and validate on-device face recognition.
+- [ ] Implement unified attendance management.
+- [ ] Complete assignment and quiz workflows.
+- [ ] Implement academic analytics and reporting.
+- [ ] Complete EduBot educational assistance.
+- [ ] Improve accessibility and UI responsiveness.
+- [ ] Perform comprehensive device and workflow testing.
 
-More robust on-device identity verification.
-Expanded analytics and report customization.
-Improved accessibility and localization.
-Optional secure synchronization across devices.
-Multi-institution support and configurable academic workflows.
-These are roadmap ideas, not claims about current functionality.
+## 🔮 Future Scope
 
-Contributing
-Suggestions and contributions are welcome.
+Potential future enhancements include:
 
-Review the existing implementation before changing a module.
-Keep UI, business logic, and data access separated.
-Preserve offline functionality for core workflows.
-Handle loading, empty, and error states explicitly.
-Test changes on the minimum supported Android version where
-practical.
-Document new permissions, dependencies, and setup requirements.
-License
-No license has been specified yet. Unless a license file is added to
-this repository, all rights remain with the project owner and reuse
-should not be assumed to be permitted.
+- AI-powered educational assistance.
+- Intelligent learning recommendations.
+- Improved face recognition and verification.
+- Optional cloud synchronization.
+- Multi-institution support.
+- Advanced academic analytics.
+- Real-time classroom communication.
+- Multilingual support.
 
-::: {align="center"} **EduNexus**\ *Organizing classrooms. Simplifying learning.* Built as an academic Android application project. :::
-⋮⋮⋮⋮
+## 🎯 Project Objectives
+
+1. Simplify classroom and academic management.
+2. Improve attendance tracking and student identification.
+3. Centralize academic activities in one application.
+4. Reduce repetitive administrative work.
+5. Provide students with easier access to academic information.
+6. Build an efficient, maintainable, and scalable Android solution.
+
+## 👨‍💻 Development
+
+**Project:** EduNexus  
+**Project Type:** Android Application / Academic Project  
+**Domain:** Education Technology  
+**Department:** Computer Science & Design  
+**Institution:** Madhav Institute of Technology & Science (MITS), Gwalior
+
+## 📄 License
+
+The licensing terms for this project have not yet been specified. Please contact the repository owner before redistributing or reusing the source code.
+
+---
+
+<p align="center">
+  <strong>EduNexus — Connecting Classrooms. Empowering Education.</strong>
+  <br/>
+  <sub>Designed to make academic management smarter and simpler.</sub>
+</p>
